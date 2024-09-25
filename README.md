@@ -1,0 +1,1 @@
+# plugins-mailersend-official-smtp-integration
