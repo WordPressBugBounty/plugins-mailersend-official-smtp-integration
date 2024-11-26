@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       MailerSend - Official SMTP Integration
  * Description:       Improve your deliverability and avoid the spam box with MailerSend’s SMTP server. Check your analytics to improve your emails for better conversion!
- * Version:           1.0.3
+ * Version:           1.0.4
  * Requires at least: 5.7
  * Requires PHP:      7.2.5
  * Author:            MailerSend
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'MAILERSEND_SMTP_NAME', 'MailerSend - Official SMTP Integration' );
 
 // Plugin version
-define( 'MAILERSEND_SMTP_VER', '1.0.3' );
+define( 'MAILERSEND_SMTP_VER', '1.0.4' );
 
 // Plugin path
 define( 'MAILERSEND_SMTP_DIR', plugin_dir_path( __FILE__ ) );
