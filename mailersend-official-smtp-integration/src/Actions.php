@@ -115,7 +115,7 @@ class Actions {
 				$sender_tags = sanitize_text_field( $_POST['sender_tags'] );
 
 				$tags = array_map( 'trim', array_filter( explode( ',', $sender_tags ) ) );
-				
+
 				if ( count( $tags ) > 5 ) {
 					add_action( 'admin_notices', [
 						__NAMESPACE__ . '\\Admin\\NoticeView',
@@ -317,18 +317,21 @@ class Actions {
 			return;
 		}
 
-		if ( ConfigData::hasConfigCredentials() === true ) {
+		if ( ! empty( $_POST ) && check_admin_referer( 'mailer_delete', 'mailersend_delete_nonce' ) ) {
 
-			// warn user about defined SMTP Password constant
-			add_action( 'admin_notices', [ __NAMESPACE__ . '\\Admin\\NoticeView', 'warning_defined_smtp_found' ] );
+			if ( ConfigData::hasConfigCredentials() === true ) {
 
-			return;
+				// warn user about defined SMTP Password constant
+				add_action( 'admin_notices', [ __NAMESPACE__ . '\\Admin\\NoticeView', 'warning_defined_smtp_found' ] );
+
+				return;
+			}
+
+			ConfigData::deleteData();
+
+			// return deletion completed feedback
+			add_action( 'admin_notices', [ __NAMESPACE__ . '\\Admin\\NoticeView', 'successfully_deleted' ] );
 		}
-
-		ConfigData::deleteData();
-
-		// return deletion completed feedback
-		add_action( 'admin_notices', [ __NAMESPACE__ . '\\Admin\\NoticeView', 'successfully_deleted' ] );
 	}
 
 }

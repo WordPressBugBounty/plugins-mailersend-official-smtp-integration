@@ -4,7 +4,7 @@ Donate link: http://www.mailersend.com/
 Tags: mailersend, email, smtp, wp_mail, phpmailer, wp smtp
 Requires at least: 5.7
 Tested up to: 6.9.4
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -95,6 +95,11 @@ Install the official MailerSend SMTP plugin using any of the following methods.
 1. MailerSend
 
 == Changelog ==
+= 1.0.8 =
+* Security fixes
+
+= 1.0.7 =
+* Security fixes
 
 = 1.0.6 =
 * Tested up to the latest WordPress version
